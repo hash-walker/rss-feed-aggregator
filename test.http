@@ -1,7 +1,39 @@
 ### POST request to example server
-POST http://localhost:8080/v1/users
+POST http://localhost:8080/v1/feeds
 Content-Type: application/json
+Authorization: ApiKey 212932d073c3b96f8fe42788632e34955a840add2ba30422693be9577d6608e2
 
 {
-  "name": "Faraz"
+  "name": "Okasha's blog about Golang",
+  "url": "https://garbageurl.dev/index.xml"
 }
+
+### Get all feeds
+GET http://localhost:8080/v1/feeds
+Content-Type: application/json
+Accept: application/json
+
+### Post feed follow
+POST http://localhost:8080/v1/feed_follows
+Content-Type: application/json
+Authorization: ApiKey 212932d073c3b96f8fe42788632e34955a840add2ba30422693be9577d6608e2
+
+{
+  "feed_id": "a177de95-b1ff-44de-8192-1174ec1f6994"
+}
+
+### Delete feed follow
+DELETE http://localhost:8080/v1/feed_follows/6cea522e-b41d-4d91-9fc3-4aa18bde81dc
+Content-Type: application/json
+Authorization: ApiKey 212932d073c3b96f8fe42788632e34955a840add2ba30422693be9577d6608e2
+
+
+### Get all feed follows
+
+GET http://localhost:8080/v1/feed_follows
+Content-Type: application/json
+Accept: application/json
+Authorization: ApiKey 212932d073c3b96f8fe42788632e34955a840add2ba30422693be9577d6608e2
+
+
+
